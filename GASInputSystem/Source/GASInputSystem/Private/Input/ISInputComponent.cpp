@@ -1,16 +1,11 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright (c) 2023 intrxx. Original code from Enhanced Input Ability Activation, used under the MIT License.
+// Copyright (c) 2026 Daniel Beaty. Modified for the GAS Input System plugin. See LICENSE.
 
 
 #include "Input/ISInputComponent.h"
 
 
-// Sets default values for this component's properties
 UISInputComponent::UISInputComponent()
 {
-	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
-	// off to improve performance if you don't need them.
-	PrimaryComponentTick.bCanEverTick = true;
-
-	// ...
 }
 

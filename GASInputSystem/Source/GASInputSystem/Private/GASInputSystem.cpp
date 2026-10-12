@@ -1,4 +1,4 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+// Copyright (c) 2026 Daniel Beaty. Part of the GAS Input System plugin, released under the MIT License. See LICENSE.
 
 #include "GASInputSystem.h"
 

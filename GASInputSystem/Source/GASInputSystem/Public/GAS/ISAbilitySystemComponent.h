@@ -1,4 +1,5 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright (c) 2023 intrxx. Original code from Enhanced Input Ability Activation, used under the MIT License.
+// Copyright (c) 2026 Daniel Beaty. Modified for the GAS Input System plugin. See LICENSE.
 
 #pragma once
 
@@ -13,7 +14,6 @@ class GASINPUTSYSTEM_API UISAbilitySystemComponent : public UAbilitySystemCompon
 	GENERATED_BODY()
 
 public:
-	// Sets default values for this component's properties
 	UISAbilitySystemComponent();
 
 	void AbilityInputTagPressed(const FGameplayTag& InputTag);
@@ -25,10 +25,14 @@ public:
 protected:
 	virtual void AbilitySpecInputPressed(FGameplayAbilitySpec& Spec) override;
 	virtual void AbilitySpecInputReleased(FGameplayAbilitySpec& Spec) override;
-	
+
+protected:
+	// Handles to abilities that had their input pressed this frame.
 	TArray<FGameplayAbilitySpecHandle> InputPressedSpecHandles;
 
+	// Handles to abilities that had their input released this frame.
 	TArray<FGameplayAbilitySpecHandle> InputReleasedSpecHandles;
 
+	// Handles to abilities that have their input held.
 	TArray<FGameplayAbilitySpecHandle> InputHeldSpecHandles;
 };

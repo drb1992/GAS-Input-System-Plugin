@@ -1,4 +1,5 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright (c) 2023 intrxx. Original code from Enhanced Input Ability Activation, used under the MIT License.
+// Copyright (c) 2026 Daniel Beaty. Modified for the GAS Input System plugin. See LICENSE.
 
 #pragma once
 
@@ -12,8 +13,11 @@
 UENUM(BlueprintType)
 enum class EISAbilityActivationPolicy : uint8
 {
+	// Try to activate the ability when the input is triggered.
 	OnInputTriggered,
-	WhileInputActive,
+
+	// Continually try to activate the ability while the input is active.
+	WhileInputActive
 };
 
 /**
@@ -28,6 +32,6 @@ public:
 	EISAbilityActivationPolicy GetActivationPolicy() const {return ActivationPolicy;}
 	
 protected:
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "SN|Ability Activation")
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "InputSystem|Ability Activation")
 	EISAbilityActivationPolicy ActivationPolicy;
 };

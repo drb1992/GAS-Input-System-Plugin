@@ -1,4 +1,5 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright (c) 2023 intrxx. Original code from Enhanced Input Ability Activation, used under the MIT License.
+// Copyright (c) 2026 Daniel Beaty. Modified for the GAS Input System plugin. See LICENSE.
 
 #pragma once
 
@@ -49,6 +50,7 @@ public:
 	void AddAbilitySpecHandle(const FGameplayAbilitySpecHandle& Handle);
 
 protected:
+	// Handles to the granted abilities.
 	UPROPERTY()
 	TArray<FGameplayAbilitySpecHandle> AbilitySpecHandles;
 };
@@ -62,9 +64,12 @@ class GASINPUTSYSTEM_API UISAbilitySet : public UDataAsset
 	GENERATED_BODY()
 
 public:
+	// Grants the ability set to the specified ability system component.
+	// The returned handles can be used later to take away anything that was granted.
 	void GiveToAbilitySystem(UISAbilitySystemComponent* InASC, FISAbilitySet_GrantedHandles* OutGrantedHandles, UObject* SourceObject = nullptr) const;
 
 protected:
+	// Gameplay abilities to grant when this ability set is granted.
 	UPROPERTY(EditDefaultsOnly, Category = "Gameplay Abilities", meta=(TitleProperty=Ability))
 	TArray<FISAbilitySet_GameplayAbility> GrantedGameplayAbilities;
 };

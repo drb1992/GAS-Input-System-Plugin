@@ -1,4 +1,5 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright (c) 2023 intrxx. Original code from Enhanced Input Ability Activation, used under the MIT License.
+// Copyright (c) 2026 Daniel Beaty. Modified for the GAS Input System plugin. See LICENSE.
 
 
 #include "Input/ISInputConfig.h"
@@ -12,7 +13,7 @@ const UInputAction* UISInputConfig::FindNativeInputActionForTag(const FGameplayT
 			return Action.InputAction;
 		}
 	}
-	UE_LOG(LogTemp, Error, TEXT("UISInputConfig::FindNativeInputActionForTag - Can't find NativeInputAction for InputTag [%s] on InputConfig [%s]."), *InputTag.ToString(), *GetNameSafe(this));
+	UE_LOG(LogTemp, Error, TEXT("UISInputConfig::FindNativeInputActionForTag: Can't find NativeInputAction for InputTag [%s] on InputConfig [%s]."), *InputTag.ToString(), *GetNameSafe(this));
 	
 	return nullptr;
 }
@@ -26,7 +27,7 @@ const UInputAction* UISInputConfig::FindAbilityInputActionForTag(const FGameplay
 			return Action.InputAction;
 		}
 	}
-	UE_LOG(LogTemp, Error, TEXT("UISInputConfig::FindAbilityInputActionForTag - Can't find NativeInputAction for InputTag [%s] on InputConfig [%s]."), *InputTag.ToString(), *GetNameSafe(this));
+	UE_LOG(LogTemp, Error, TEXT("UISInputConfig::FindAbilityInputActionForTag: Can't find AbilityInputAction for InputTag [%s] on InputConfig [%s]."), *InputTag.ToString(), *GetNameSafe(this));
 	
 	return nullptr;
 }
